@@ -332,11 +332,11 @@ function Path:Tween(target)
 	end))
 
 	--Begin pathfinding
-	if self._humanoid and Settings.Running then
+	if self._humanoid then
 	    local t = ts:Create(player.Character.HumanoidRootPart, tweenInfo, {
         CFrame = CFrame.new(self._waypoints[self._currentWaypoint].Position + Vector3.new(0,3,0))
         });
-	elseif #self._waypoints == 2 and not Settings.Running then
+	elseif #self._waypoints == 2 then
 		self._target = nil
 		self._visualWaypoints = destroyVisualWaypoints(self._visualWaypoints)
 		self._events.Reached:Fire(self._agent, self._waypoints[2])
