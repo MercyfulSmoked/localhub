@@ -343,7 +343,7 @@ function Path:Run(target)
 	else
 		if Settings.Running then
 			self._currentWaypoint = getNonHumanoidWaypoint(self)
-			moveToFinished(self, true)
+			moveToFinished(self, true) -- e
 		end
 	end
 	return true
