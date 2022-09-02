@@ -334,9 +334,9 @@ function Path:Run(target)
 	end))
 
 	--Begin pathfinding
-	if self._humanoid and Settings.Running then
+	if self._humanoid then
 		self._humanoid:MoveTo(self._waypoints[self._currentWaypoint].Position)
-	elseif #self._waypoints == 2 and not Settings.Running then
+	elseif #self._waypoints == 2 then
 		self._target = nil
 		self._visualWaypoints = destroyVisualWaypoints(self._visualWaypoints)
 		self._events.Reached:Fire(self._agent, self._waypoints[2])
