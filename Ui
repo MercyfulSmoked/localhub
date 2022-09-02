@@ -1,5 +1,4 @@
-pcall(function()
--- This User Interface Library is brought to you by Solaris Software.
+
 local Solaris = Instance.new("ScreenGui")
 Solaris.Name = "local's version"
 Solaris.Parent = game.CoreGui
@@ -1293,4 +1292,4 @@ function SolarisLib:New(Config)
     return TabHolder
 end    
 return SolarisLib
-end);
+
