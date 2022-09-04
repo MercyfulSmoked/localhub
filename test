@@ -856,7 +856,7 @@ function SolarisLib:New(Config)
                     end
                 end)
 
-		Toggle:Set(def)
+
                 SolarisLib.Flags[flag] = Toggle
                 return Toggle
             end    
