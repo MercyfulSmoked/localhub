@@ -856,8 +856,6 @@ function SolarisLib:New(Config)
                     end
                 end)
 
-
-                SolarisLib.Flags[flag] = Toggle
                 return Toggle
             end    
             function ItemHold:Slider(text,min,max,start,inc,flag,callback)
