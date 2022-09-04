@@ -835,10 +835,26 @@ function SolarisLib:New(Config)
                 ToggleMain.ToggleText.Text = text
                 ToggleMain.Name = text .. "element"
 
+                function Toggle:Set(value)
+			Toggle.Value = value
+			return callback(Toggle.Value)
+		end
+
 		ToggleMain.MouseButton1Click:Connect(function()
-			Toggle.Value = not Toggle.Value     
+			Toggle.Value = not Toggle.Value
+			Toggle:Set(Toggle.Value)           
 		end)
 
+                spawn(function()
+                    while wait() do
+                        ToggleMain.ToggleFrame.ToggleToggled.BackgroundColor3 = Toggle.Value and SolarisLib.Themes[SolarisLib.Settings.Theme].ToggleToggled or SolarisLib.Themes[SolarisLib.Settings.Theme].Toggle
+                        ToggleMain.ToggleFrame.BackgroundColor3 = Toggle.Value and SolarisLib.Themes[SolarisLib.Settings.Theme].ToggleToggled or SolarisLib.Themes[SolarisLib.Settings.Theme].ToggleFrame
+                        ToggleMain.BackgroundColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].Toggle
+                        ToggleMain.ToggleText.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
+                    end
+                end)
+
+				Toggle:Set(def)
                 SolarisLib.Flags[flag] = Toggle
                 return Toggle
             end    
