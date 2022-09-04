@@ -834,6 +834,12 @@ function SolarisLib:New(Config)
                 ToggleMain.Parent = Section
                 ToggleMain.ToggleText.Text = text
                 ToggleMain.Name = text .. "element"
+
+		ToggleMain.MouseButton1Click:Connect(function()
+			Toggle.Value = not Toggle.Value
+			Toggle:Set(Toggle.Value)           
+		end)
+
                 SolarisLib.Flags[flag] = Toggle
                 return Toggle
             end    
