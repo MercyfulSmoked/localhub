@@ -830,16 +830,22 @@ function SolarisLib:New(Config)
 
             end    
             function ItemHold:Toggle(text,def,flag,callback)
-                local Toggle,ToggleMain = {Value = def}, game:GetObjects("rbxassetid://6963155498")[1]
+                local Toggle,ToggleMain = {Value = false}, game:GetObjects("rbxassetid://6963155498")[1]
                 ToggleMain.Parent = Section
                 ToggleMain.ToggleText.Text = text
                 ToggleMain.Name = text .. "element"
-	
-		callback = callback or function() end
 
-		ToggleMain.MouseButton1Click:Connect(function()
-			Toggle.Value = not Toggle.Value          
-		end)
+                function Toggle:Set(value)
+					Toggle.Value = value
+                    TweenService:Create(ToggleMain.ToggleFrame.ToggleToggled.ToggleIco,TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{ImageTransparency= Toggle.Value and 0 or 1}):Play()
+                    TweenService:Create(ToggleMain.ToggleFrame.ToggleToggled.ToggleIco,TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size= Toggle.Value and UDim2.new(1,-2,1,-2) or UDim2.new(1,-6,1,-6)}):Play()
+					return callback(Toggle.Value)
+				end
+				
+				ToggleMain.MouseButton1Click:Connect(function()
+					Toggle.Value = not Toggle.Value
+					Toggle:Set(Toggle.Value)           
+				end)
 
                 spawn(function()
                     while wait() do
@@ -850,6 +856,7 @@ function SolarisLib:New(Config)
                     end
                 end)
 
+				Toggle:Set(def)
                 SolarisLib.Flags[flag] = Toggle
                 return Toggle
             end    
