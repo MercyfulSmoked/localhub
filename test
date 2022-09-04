@@ -835,9 +835,15 @@ function SolarisLib:New(Config)
                 ToggleMain.ToggleText.Text = text
                 ToggleMain.Name = text .. "element"
 
-				ToggleMain.MouseButton1Click:Connect(function()
-					Toggle.Value = not Toggle.Value
-				end)
+                function Toggle:Set(value)
+			Toggle.Value = value
+			return callback(Toggle.Value)
+		end
+				
+		ToggleMain.MouseButton1Click:Connect(function()
+			Toggle.Value = not Toggle.Value
+			Toggle:Set(Toggle.Value)           
+		end)
 
                 spawn(function()
                     while wait() do
@@ -848,7 +854,7 @@ function SolarisLib:New(Config)
                     end
                 end)
 
-
+		Toggle:Set(def)
                 SolarisLib.Flags[flag] = Toggle
                 return Toggle
             end    
