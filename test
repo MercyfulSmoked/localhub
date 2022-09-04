@@ -829,8 +829,8 @@ function SolarisLib:New(Config)
                        Button.ButtonText.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
                     end
                 end)
-
             end    
+	    
             function ItemHold:Toggle(text,def,flag,callback)
                 local Toggle,ToggleMain = {Value = false}, game:GetObjects("rbxassetid://6963155498")[1]
                 ToggleMain.Parent = Section
@@ -838,30 +838,22 @@ function SolarisLib:New(Config)
                 ToggleMain.Name = text .. "element"
 
                 function Toggle:Set(value)
-					Toggle.Value = value
-                    TweenService:Create(ToggleMain.ToggleFrame.ToggleToggled.ToggleIco,TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{ImageTransparency= Toggle.Value and 0 or 1}):Play()
-                    TweenService:Create(ToggleMain.ToggleFrame.ToggleToggled.ToggleIco,TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size= Toggle.Value and UDim2.new(1,-2,1,-2) or UDim2.new(1,-6,1,-6)}):Play()
-					return callback(Toggle.Value)
-				end
-				
-				ToggleMain.MouseButton1Click:Connect(function()
-					Toggle.Value = not Toggle.Value
-					Toggle:Set(Toggle.Value)           
-				end)
+				Toggle.Value = value
+				    TweenService:Create(ToggleMain.ToggleFrame.ToggleToggled.ToggleIco,TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{ImageTransparency= Toggle.Value and 0 or 1}):Play()
+				    TweenService:Create(ToggleMain.ToggleFrame.ToggleToggled.ToggleIco,TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size= Toggle.Value and UDim2.new(1,-2,1,-2) or UDim2.new(1,-6,1,-6)}):Play()
+				return callback(Toggle.Value)
+			end
 
-                spawn(function()
-                    while wait() do
-                        ToggleMain.ToggleFrame.ToggleToggled.BackgroundColor3 = Toggle.Value and SolarisLib.Themes[SolarisLib.Settings.Theme].ToggleToggled or SolarisLib.Themes[SolarisLib.Settings.Theme].Toggle
-                        ToggleMain.ToggleFrame.BackgroundColor3 = Toggle.Value and SolarisLib.Themes[SolarisLib.Settings.Theme].ToggleToggled or SolarisLib.Themes[SolarisLib.Settings.Theme].ToggleFrame
-                        ToggleMain.BackgroundColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].Toggle
-                        ToggleMain.ToggleText.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
-                    end
-                end)
+			ToggleMain.MouseButton1Click:Connect(function()
+				Toggle.Value = not Toggle.Value
+				Toggle:Set(Toggle.Value)           
+			end)
 
-				Toggle:Set(def)
+			Toggle:Set(def)
                 SolarisLib.Flags[flag] = Toggle
                 return Toggle
             end    
+	    
             function ItemHold:Slider(text,min,max,start,inc,flag,callback)
                 local Slider,SliderMain = {Value = start}, game:GetObjects("rbxassetid://6967573727")[1]
                 SliderMain.Parent = Section
