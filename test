@@ -834,10 +834,12 @@ function SolarisLib:New(Config)
                 ToggleMain.Parent = Section
                 ToggleMain.ToggleText.Text = text
                 ToggleMain.Name = text .. "element"
-
+	
+		callback = callback or function() end
+		
                 function Toggle:Set(value)
 			Toggle.Value = value
-			return callback(Toggle.Value)
+			pcall(callback, Toggle.Value)
 		end
 
 		ToggleMain.MouseButton1Click:Connect(function()
