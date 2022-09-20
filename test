@@ -1,6 +1,6 @@
-
+-- This User Interface Library is brought to you by Solaris Software.
 local Solaris = Instance.new("ScreenGui")
-Solaris.Name = "local's hub"
+Solaris.Name = "dosage's solaris gui"
 Solaris.Parent = game.CoreGui
 Solaris.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -1292,4 +1292,3 @@ function SolarisLib:New(Config)
     return TabHolder
 end    
 return SolarisLib
-
