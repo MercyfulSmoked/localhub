@@ -1,4 +1,4 @@
-pcall(function()
+
 local Solaris = Instance.new("ScreenGui")
 Solaris.Name = "dosage's solaris gui"
 Solaris.Parent = game.CoreGui
@@ -1292,4 +1292,4 @@ function SolarisLib:New(Config)
     return TabHolder
 end    
 return SolarisLib
-end);
+
