@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Creation Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212; /* Dark background color */
+            color: #fff; /* Light text color */
+        }
+
+        #container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background for container */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        #keyDisplay {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Welcome to the Key Creation Website</h2>
+        <p>Generate your unique key by clicking the button below:</p>
+        <button id="generateButton" class="button" onclick="generateKey()">Generate Key</button>
+        <button id="retrieveButton" class="button" onclick="retrieveKey()">Retrieve Key</button>
+        <div id="keyDisplay"></div>
+    </div>
+
+    <script>
+        function generateKey() {
+            // Check if a key has already been generated for this IP
+            var generatedKey = localStorage.getItem('generatedKey');
+            var generatedTime = localStorage.getItem('generatedTime');
+            var currentTime = new Date().getTime();
+            if (generatedKey && currentTime - generatedTime < 24 * 60 * 60 * 1000) {
+                document.getElementById('keyDisplay').innerText = "A key has already been generated for you: " + generatedKey;
+            } else {
+                // Generate a random key
+                var key = Math.random().toString(36).substr(2, 8); // Generates an 8-character key
+                // Save generated key and time for this IP
+                localStorage.setItem('generatedKey', key);
+                localStorage.setItem('generatedTime', currentTime);
+                document.getElementById('keyDisplay').innerText = "Generated Key: " + key;
+            }
+        }
+
+        function retrieveKey() {
+            // Retrieve the key from local storage
+            var generatedKey = localStorage.getItem('generatedKey');
+            var generatedTime = localStorage.getItem('generatedTime');
+            var currentTime = new Date().getTime();
+            if (generatedKey && currentTime - generatedTime < 24 * 60 * 60 * 1000) {
+                document.getElementById('keyDisplay').innerText = "Retrieved Key: " + generatedKey;
+            } else {
+                document.getElementById('keyDisplay').innerText = "No key has been generated for this you yet or the key has expired.";
+            }
+        }
+    </script>
+</body>
+</html>
