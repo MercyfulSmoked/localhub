@@ -1,4 +1,4 @@
-pcall(function()
+
 local UserInputService = game:GetService("UserInputService")
 local HttpService = game:GetService("HttpService")
 local TextService = game:GetService("TextService")
@@ -2218,8 +2218,10 @@ Bracket.Elements = {
 
 		UserInputService.InputChanged:Connect(function(Input)
 			if WindowAsset.Visible and Input.UserInputType == Enum.UserInputType.MouseMovement then
-				local Mouse = UserInputService:GetMouseLocation()
-				Bracket.Screen.ToolTip.Position = UDim2.fromOffset(Mouse.X + 5, Mouse.Y - 5)
+				pcall(function()
+					local Mouse = UserInputService:GetMouseLocation()
+					Bracket.Screen.ToolTip.Position = UDim2.fromOffset(Mouse.X + 5, Mouse.Y - 5)
+				end);
 			end
 		end)
 		RunService.RenderStepped:Connect(function()
@@ -4009,4 +4011,4 @@ function Bracket:Toast(Notification)
 end
 
 return Bracket
-end);
+
