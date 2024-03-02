@@ -1,8 +1,6 @@
-local Library = {
 
-};
 
-function Library:ESP(ESP, Player, Color, Toggle)
+function EST:ESP(ESP, Player, Color, Toggle)
     if ESP == "Box" then 
         local lp = game.Players.LocalPlayer;
         local players = game:GetService("Players");
