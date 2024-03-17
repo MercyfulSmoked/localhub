@@ -121,13 +121,13 @@ local SaveManager = {} do
                     print("Value:", obj.value)
                     print("Index:", obj.idx)
                 elseif Options[obj.idx] then
-                    if obj.Type == "Input" then
+                    if obj.type == "Input" then
                         print(obj.type)
                         Options[obj.idx]:SetValue(tostring(obj.value))
                         print("Index:", obj.idx)
                     print("Value:", obj.value)
                     else
-                        print(obj.type)
+                        print(obj.type.."1")
                         Options[obj.idx]:SetValue(obj.value)
                         print("Index:", obj.idx)
                         print("Value:", obj.value)
