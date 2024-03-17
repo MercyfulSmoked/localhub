@@ -116,15 +116,16 @@ local SaveManager = {} do
 
 		if decoded and decoded.objects then
 		    for _, obj in ipairs(decoded.objects) do
-			if Toggles[obj.idx] and obj.type ~= "Input" then
-			    Toggles[obj.idx]:SetValue(obj.Value)
-			elseif Options[obj.idx] and obj.type ~= "Input" then
-			    Options[obj.idx]:SetValue(obj.Value)
-            elseif obj.type == "Input" then
-                Options[obj.idx]:SetValue(obj.Text)
-			end;
-			print("Index:", obj.idx)
-			print("Value:", obj.value)
+                if Toggles[obj.idx] then
+                    Toggles[obj.idx]:SetValue(obj.Value)
+                    print("Value:", obj.value)
+                    print("Index:", obj.idx)
+                elseif Options[obj.idx] then
+                    print(obj.type)
+                    Options[obj.idx]:SetValue(obj.value)
+                    print("Index:", obj.idx)
+                    print("Value:", obj.value)
+                end;
 		    end
 		else
 		    warn("Failed to decode JSON data or missing 'objects' field.")
