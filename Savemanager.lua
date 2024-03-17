@@ -11,7 +11,6 @@ local SaveManager = {} do
 			Load = function(idx, data)
 				if Toggles[idx] then 
 					Toggles[idx]:SetValue(data.value)
-					print("Set: "..tostring(idx).." As: "..tostring(data.value))
 				end
 			end,
 		},
