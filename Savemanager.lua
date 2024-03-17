@@ -114,7 +114,7 @@ local SaveManager = {} do
 		local success, decoded = pcall(httpService.JSONDecode, httpService, readfile(file))
 		if not success then return false, 'decode error' end
 
-		for _, option in next, decoded.objects do
+		for _, option in ipairs(decoded.objects) do
 			if self.Parser[option.type] then
 				self.Parser[option.type].Load(option.idx, option)
 				print(option.idx, option)
