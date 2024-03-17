@@ -116,9 +116,9 @@ local SaveManager = {} do
 
 		if decoded and decoded.objects then
 		    for _, obj in ipairs(decoded.objects) do
-			if Toggles[obj.idx] then
+			if Toggles[obj.idx] and obj.Value ~= nil then
 			    Toggles[obj.idx]:SetValue(obj.Value)
-			elseif Options[obj.idx] then
+			elseif Options[obj.idx] and obj.Value ~= nil then
 			    Options[obj.idx]:SetValue(obj.Value)
 			end;
 			print("Index:", obj.idx)
