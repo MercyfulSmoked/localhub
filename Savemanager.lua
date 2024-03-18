@@ -112,24 +112,27 @@ local SaveManager = {} do
         if not isfile(file) then 
             return false, 'invalid file' 
         end
-
+        
         local fileContents = readfile(file)
         if not fileContents then 
             return false, 'unable to read file contents' 
         end
-
+        
         local success, decoded = pcall(httpService.JSONDecode, httpService, fileContents)
         if not success then 
             return false, 'decode error' 
         end
-
+        
+        print("Decoded data:")
+        print(decoded)
+        
         for _, option in ipairs(decoded.objects) do
+            print("Option:", option.idx, option.value) -- Add this line for debugging
             if self.Parser[option.type] then
                 self.Parser[option.type].Load(option.idx, option)
-                print(option.idx, option)
             end
         end
-
+        
         return true
 	end
 
