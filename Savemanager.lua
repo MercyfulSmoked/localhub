@@ -114,20 +114,11 @@ local SaveManager = {} do
 		local success, decoded = pcall(httpService.JSONDecode, httpService, readfile(file))
 		if not success then return false, 'decode error' end
 
-		if decoded and decoded.objects then
-		    for _, obj in ipairs(decoded.objects) do
-                if Toggles[obj.idx] then
-                    Toggles[obj.idx]:SetValue(obj.value)
-                    print(obj.idx, obj.value)
-                elseif Options[obj.idx] and type(obj.text) == 'string' then
-                    Options[obj.idx]:SetValue(obj.text)
-                    print(obj.idx, obj.text)
-                end;
-		    end
-		else
-		    warn("Failed to decode JSON data or missing 'objects' field.")
+		for _, option in next, decoded.objects do
+			if self.Parser[option.type] then
+				self.Parser[option.type].Load(option.idx, option)
+			end
 		end
-
 
 		return true
 	end
