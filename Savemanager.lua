@@ -117,21 +117,9 @@ local SaveManager = {} do
 		if decoded and decoded.objects then
 		    for _, obj in ipairs(decoded.objects) do
                 if Toggles[obj.idx] then
-                    Toggles[obj.idx]:SetValue(obj.Value)
-                    print("Value:", obj.value)
-                    print("Index:", obj.idx)
+                    Toggles[obj.idx]:SetValue(obj.value)
                 elseif Options[obj.idx] then
-                    if obj.type == "Input" then
-                        print(obj.type)
-                        Options[obj.idx]:SetValue(tostring(obj.value))
-                        print("Index:", obj.idx)
-                    print("Value:", obj.value)
-                    else
-                        print(obj.type.."1")
-                        Options[obj.idx]:SetValue(obj.value)
-                        print("Index:", obj.idx)
-                        print("Value:", obj.value)
-                    end;
+                    Options[obj.idx]:SetValue(obj.text)
                 end;
 		    end
 		else
