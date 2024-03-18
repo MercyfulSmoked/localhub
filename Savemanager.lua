@@ -112,28 +112,35 @@ local SaveManager = {} do
         if not isfile(file) then 
             return false, 'invalid file' 
         end
-        
+
         local fileContents = readfile(file)
         if not fileContents then 
             return false, 'unable to read file contents' 
         end
-        
+
         local success, decoded = pcall(httpService.JSONDecode, httpService, fileContents)
         if not success then 
             return false, 'decode error' 
         end
-        
+
         print("Decoded data:")
         print(decoded)
-        
+
         for _, option in ipairs(decoded.objects) do
-            print("Option:", option.idx, option.value) -- Add this line for debugging
+            print("Option:", option.idx, option.value)
             if self.Parser[option.type] then
-                self.Parser[option.type].Load(option.idx, option)
+                if option.type == "Input" and option.idx == "ADT" then
+                    -- Handle special case for "ADT" option with URL value
+                    option.text = option.text:gsub("%%", "%%%%") -- Escape percent characters
+                    self.Parser[option.type].Load(option.idx, option)
+                else
+                    self.Parser[option.type].Load(option.idx, option)
+                end
             end
         end
-        
+
         return true
+
 	end
 
 	function SaveManager:IgnoreThemeSettings()
