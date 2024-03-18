@@ -119,7 +119,7 @@ local SaveManager = {} do
                 if Toggles[obj.idx] then
                     Toggles[obj.idx]:SetValue(obj.value)
                     print(obj.idx, obj.value)
-                elseif Options[obj.idx] then
+                elseif Options[obj.idx] and type(obj.text) == 'string' then
                     Options[obj.idx]:SetValue(obj.text)
                     print(obj.idx, obj.text)
                 end;
