@@ -126,6 +126,7 @@ local SaveManager = {} do
         for _, option in ipairs(decoded.objects) do
             if self.Parser[option.type] then
                 self.Parser[option.type].Load(option.idx, option)
+                print(option.idx, option)
             end
         end
 
