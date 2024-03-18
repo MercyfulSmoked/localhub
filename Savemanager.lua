@@ -118,8 +118,10 @@ local SaveManager = {} do
 		    for _, obj in ipairs(decoded.objects) do
                 if Toggles[obj.idx] then
                     Toggles[obj.idx]:SetValue(obj.value)
+                    print(obj.idx, obj.value)
                 elseif Options[obj.idx] then
                     Options[obj.idx]:SetValue(obj.text)
+                    print(obj.idx, obj.text)
                 end;
 		    end
 		else
