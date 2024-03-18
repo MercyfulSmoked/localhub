@@ -109,18 +109,27 @@ local SaveManager = {} do
 
 	function SaveManager:Load(name)
 		local file = self.Folder .. '/settings/' .. name .. '.json'
-		if not isfile(file) then return false, 'invalid file' end
+        if not isfile(file) then 
+            return false, 'invalid file' 
+        end
 
-		local success, decoded = pcall(httpService.JSONDecode, httpService, readfile(file))
-		if not success then return false, 'decode error' end
+        local fileContents = readfile(file)
+        if not fileContents then 
+            return false, 'unable to read file contents' 
+        end
 
-		for _, option in next, decoded.objects do
-			if self.Parser[option.type] then
-				self.Parser[option.type].Load(option.idx, option)
-			end
-		end
+        local success, decoded = pcall(httpService.JSONDecode, httpService, fileContents)
+        if not success then 
+            return false, 'decode error' 
+        end
 
-		return true
+        for _, option in ipairs(decoded.objects) do
+            if self.Parser[option.type] then
+                self.Parser[option.type].Load(option.idx, option)
+            end
+        end
+
+        return true
 	end
 
 	function SaveManager:IgnoreThemeSettings()
