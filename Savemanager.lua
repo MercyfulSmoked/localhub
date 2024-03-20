@@ -128,16 +128,16 @@ local SaveManager = {} do
         print(decoded)
 
         for _, option in ipairs(decoded.objects) do
-			print(type(option.value))
-			print(type(option.type))
-            print("Option:", option.idx, option.value)
-            if self.Parser[option.type] then
-                if option.type == "Input" and option.idx == "ADT" then
-                    self.Parser[option.type].Load(option.idx, option)
-                else
-                    self.Parser[option.type].Load(option.idx, option)
-                end
-            end
+			if type(option.value) ~= nil and type(option.value) == "table" then
+				print("Option:", option.idx, option.value)
+				if self.Parser[option.type] then
+					if option.type == "Input" and option.idx == "ADT" then
+						self.Parser[option.type].Load(option.idx, option)
+					else
+						self.Parser[option.type].Load(option.idx, option)
+					end
+				end
+			end
         end
 
         return true
