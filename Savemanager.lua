@@ -9,7 +9,7 @@ local SaveManager = {} do
 				return { type = 'Toggle', idx = idx, value = object.Value } 
 			end,
 			Load = function(idx, data)
-				if Toggles[idx] then 
+				if Toggles[idx] ~= nil then 
 					Toggles[idx]:SetValue(data.value)
 				end
 			end,
