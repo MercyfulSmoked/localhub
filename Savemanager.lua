@@ -130,7 +130,6 @@ local SaveManager = {} do
             print("Option:", option.idx, option.value)
             if self.Parser[option.type] then
                 if option.type == "Input" and option.idx == "ADT" then
-                    option.text = option.text
                     self.Parser[option.type].Load(option.idx, option)
                 else
                     self.Parser[option.type].Load(option.idx, option)
