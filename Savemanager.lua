@@ -130,8 +130,7 @@ local SaveManager = {} do
             print("Option:", option.idx, option.value)
             if self.Parser[option.type] then
                 if option.type == "Input" and option.idx == "ADT" then
-                    -- Handle special case for "ADT" option with URL value
-                    option.text = option.text:gsub("%%", "%%%%") -- Escape percent characters
+                    option.text = option.text
                     self.Parser[option.type].Load(option.idx, option)
                 else
                     self.Parser[option.type].Load(option.idx, option)
