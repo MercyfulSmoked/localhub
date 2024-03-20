@@ -9,7 +9,7 @@ local SaveManager = {} do
 				return { type = 'Toggle', idx = idx, value = object.Value } 
 			end,
 			Load = function(idx, data)
-				print(idx, data.value)
+				print(idx, data)
 				if Toggles[idx] ~= nil then 
 					Toggles[idx]:SetValue(data.value)
 				end
@@ -128,6 +128,7 @@ local SaveManager = {} do
         print(decoded)
 
         for _, option in ipairs(decoded.objects) do
+			print(type(option))
             print("Option:", option.idx, option.value)
             if self.Parser[option.type] then
                 if option.type == "Input" and option.idx == "ADT" then
