@@ -128,7 +128,8 @@ local SaveManager = {} do
         print(decoded)
 
         for _, option in ipairs(decoded.objects) do
-			print(type(option))
+			print(type(option.value))
+			print(type(option.type))
             print("Option:", option.idx, option.value)
             if self.Parser[option.type] then
                 if option.type == "Input" and option.idx == "ADT" then
