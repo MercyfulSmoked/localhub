@@ -3001,3 +3001,10 @@ function Library:CreateWindow(...)
 end;
 
 return Library
+function Library:RefreshDropdown(Idx)
+    local dropdown = Options[Idx]
+    if dropdown and dropdown.Type == 'Dropdown' then
+        dropdown:SetValues()
+        dropdown:Display()
+    end
+end
