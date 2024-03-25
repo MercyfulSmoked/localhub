@@ -2027,6 +2027,14 @@ do
             -- ListOuter.Size = UDim2.new(1, -8, 0, (#Values * 20) + 2);
         end;
 
+        function Library:RefreshDropdown(Idx)
+            local dropdown = Options[Idx]
+            if dropdown and dropdown.Type == 'Dropdown' then
+                dropdown:SetValues()
+                dropdown:Display()
+            end
+        end
+
         function Dropdown:OpenDropdown()
             ListOuter.Visible = true;
             Library.OpenedFrames[ListOuter] = true;
@@ -3001,10 +3009,3 @@ function Library:CreateWindow(...)
 end;
 
 return Library
-function Library:RefreshDropdown(Idx)
-    local dropdown = Options[Idx]
-    if dropdown and dropdown.Type == 'Dropdown' then
-        dropdown:SetValues()
-        dropdown:Display()
-    end
-end
