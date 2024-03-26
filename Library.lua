@@ -2957,10 +2957,12 @@ function Library:CreateWindow(...)
         Cursor:Remove();
     end
 
-    Library:GiveSignal(game:GetService("UserInputService").InputBegan:Connect(function(Input, Processed)
-    -- Check if the player is currently focusing on a TextBox
-        if game:GetService("UserInputService").TextBoxFocused then
-            return -- Skip the rest of the function if a TextBox is focused
+    Library:GiveSignal(InputService.InputBegan:Connect(function(Input, Processed)
+    -- Check if the player is focusing on a TextBox or similar input field.
+        local focusedGuiObject = game:GetService("UserInputService"):GetFocusedTextBox()
+        if focusedGuiObject then
+            -- If so, return early and do nothing further in this event handler.
+            return
         end
     
         if type(Library.ToggleKeybind) == 'table' and Library.ToggleKeybind.Type == 'KeyPicker' then
@@ -2997,6 +2999,7 @@ function Library:CreateWindow(...)
             end
         end
     end))
+
 
 
     if Config.AutoShow then task.spawn(Library.Toggle) end
