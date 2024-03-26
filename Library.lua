@@ -2959,10 +2959,10 @@ function Library:CreateWindow(...)
 
     Library:GiveSignal(InputService.InputBegan:Connect(function(Input, Processed)
         if type(Library.ToggleKeybind) == 'table' and Library.ToggleKeybind.Type == 'KeyPicker' then
-            if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode.Name == Library.ToggleKeybind.Value and (not Processed) then
+            if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode.Name == Library.ToggleKeybind.Value and not Processed then
                 task.spawn(Library.Toggle)
             end
-        elseif Input.KeyCode == getgenv().key or (Input.KeyCode == getgenv().key and (not Processed)) then
+        elseif Input.KeyCode == getgenv().key or (Input.KeyCode == getgenv().key and not Processed) then
             task.spawn(Library.Toggle)
         end
 
@@ -2985,9 +2985,9 @@ function Library:CreateWindow(...)
                 return
             end
 
-            if Input.KeyCode == Enum.KeyCode.C and (not Processed) then
+            if Input.KeyCode == Enum.KeyCode.C and not Processed then
                 Library.ColorClipboard = HoveringColorPicker.Value
-            elseif Input.KeyCode == Enum.KeyCode.V and Library.ColorClipboard and (not Processed) then
+            elseif Input.KeyCode == Enum.KeyCode.V and Library.ColorClipboard and not Processed then
                 HoveringColorPicker:SetValueRGB(Library.ColorClipboard)
             end
         end
