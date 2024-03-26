@@ -916,7 +916,7 @@ do
                     end;
                 end);
 
-
+                wait(0.2)
                 local Event;
                 Event = InputService.InputBegan:Connect(function(Input)
                     local Key;
