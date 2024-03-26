@@ -912,11 +912,10 @@ do
                         Text = Text .. '.';
                         DisplayLabel.Text = Text;
 
-                        wait(0.4);
+                        wait(0.2);
                     end;
                 end);
 
-                wait(0.2);
 
                 local Event;
                 Event = InputService.InputBegan:Connect(function(Input)
@@ -945,7 +944,8 @@ do
             end;
         end);
 
-        Library:GiveSignal(InputService.InputBegan:Connect(function(Input)
+        Library:GiveSignal(InputService.InputBegan:Connect(function(Input, processed)
+            if processed then return end
             if (not Picking) then
                 if KeyPicker.Mode == 'Toggle' then
                     local Key = KeyPicker.Value;
@@ -2958,12 +2958,48 @@ function Library:CreateWindow(...)
     end
 
     Library:GiveSignal(InputService.InputBegan:Connect(function(Input, Processed)
-         if Processed then
-            print("typing")
-        else
-            print("typing")
-        end;
-    end))
+    -- Check if the player is focusing on a TextBox or similar input field.
+    local focusedGuiObject = game:GetService("UserInputService"):GetFocusedTextBox()
+    if focusedGuiObject then
+        -- If so, return early and do nothing further in this event handler.
+        return
+    end
+
+    if type(Library.ToggleKeybind) == 'table' and Library.ToggleKeybind.Type == 'KeyPicker' then
+        if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode.Name == Library.ToggleKeybind.Value and not Processed then
+            task.spawn(Library.Toggle)
+        end
+    elseif Input.KeyCode == getgenv().key or (Input.KeyCode == getgenv().key and not Processed) then
+        task.spawn(Library.Toggle)
+    end
+
+    if Input:IsModifierKeyDown(Enum.ModifierKey.Ctrl) and Outer.Visible then
+        local HoveringColorPicker = nil
+
+        for i, colorPicker in next, Options do
+            if colorPicker.Type == 'ColorPicker' then
+                local displayFrame = colorPicker.DisplayFrame
+                local tabFrame = displayFrame and displayFrame:findFirstAncestor('TabFrame')
+
+                if tabFrame.Visible and Library:IsMouseOverFrame(colorPicker.DisplayFrame) then
+                    HoveringColorPicker = colorPicker
+                    break
+                end
+            end
+        end
+
+        if not HoveringColorPicker then
+            return
+        end
+
+        if Input.KeyCode == Enum.KeyCode.C and not Processed then
+            Library.ColorClipboard = HoveringColorPicker.Value
+        elseif Input.KeyCode == Enum.KeyCode.V and Library.ColorClipboard and not Processed then
+            HoveringColorPicker:SetValueRGB(Library.ColorClipboard)
+        end
+    end
+end))
+
 
 
 
