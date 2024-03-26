@@ -2957,7 +2957,12 @@ function Library:CreateWindow(...)
         Cursor:Remove();
     end
 
-    Library:GiveSignal(InputService.InputBegan:Connect(function(Input, Processed)
+    Library:GiveSignal(game:GetService("UserInputService").InputBegan:Connect(function(Input, Processed)
+    -- Check if the player is currently focusing on a TextBox
+        if game:GetService("UserInputService").TextBoxFocused then
+            return -- Skip the rest of the function if a TextBox is focused
+        end
+    
         if type(Library.ToggleKeybind) == 'table' and Library.ToggleKeybind.Type == 'KeyPicker' then
             if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode.Name == Library.ToggleKeybind.Value and not Processed then
                 task.spawn(Library.Toggle)
@@ -2965,26 +2970,26 @@ function Library:CreateWindow(...)
         elseif Input.KeyCode == getgenv().key or (Input.KeyCode == getgenv().key and not Processed) then
             task.spawn(Library.Toggle)
         end
-
+    
         if Input:IsModifierKeyDown(Enum.ModifierKey.Ctrl) and Outer.Visible then
             local HoveringColorPicker = nil
-
+    
             for i, colorPicker in next, Options do
                 if colorPicker.Type == 'ColorPicker' then
                     local displayFrame = colorPicker.DisplayFrame
                     local tabFrame = displayFrame and displayFrame:findFirstAncestor('TabFrame')
-
+    
                     if tabFrame.Visible and Library:IsMouseOverFrame(colorPicker.DisplayFrame) then
                         HoveringColorPicker = colorPicker
                         break
                     end
                 end
             end
-
+    
             if not HoveringColorPicker then
                 return
             end
-
+    
             if Input.KeyCode == Enum.KeyCode.C and not Processed then
                 Library.ColorClipboard = HoveringColorPicker.Value
             elseif Input.KeyCode == Enum.KeyCode.V and Library.ColorClipboard and not Processed then
@@ -2992,6 +2997,7 @@ function Library:CreateWindow(...)
             end
         end
     end))
+
 
     if Config.AutoShow then task.spawn(Library.Toggle) end
 
