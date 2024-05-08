@@ -1,190 +1,195 @@
-getgenv().games = {
+local main = {
     ["4048852641"] = {
-        Name = "Tales Of Tanorio - 11378364822",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Tales%20Of%20Tanorio%20-%2011378364822.lua"
+        ["Name"] = "Tales Of Tanorio - 11378364822",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Tales%20Of%20Tanorio%20-%2011378364822.lua"
     },
     ["4093155512"] = {
-        Name = "Sword Burst 3 - 11523257493",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Sword%20Burst%203%20-%2011523257493.lua"
+        ["Name"] = "Sword Burst 3 - 11523257493",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Sword%20Burst%203%20-%2011523257493.lua"
     },
     ["3965173814"] = {
-        Name = "Sword Fighters Simulator - 11040063484",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Sword%20Fighters%20Simulator%20-%2011040063484.lua"
+        ["Name"] = "Sword Fighters Simulator - 11040063484",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Sword%20Fighters%20Simulator%20-%2011040063484.lua"
     },
     ["2927276067"] = {
-        Name = "Kaizen - 7525610732",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Kaizen%20-%207525610732.lua"
+        ["Name"] = "Kaizen - 7525610732",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Kaizen%20-%207525610732.lua"
     },
     ["2322853480"] = {
-        Name = "My Dragon Tycoon - 6296076147",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/My%20Dragon%20Tycoon%20-%206296076147.lua"
+        ["Name"] = "My Dragon Tycoon - 6296076147",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/My%20Dragon%20Tycoon%20-%206296076147.lua"
     },
     ["3622919436"] = {
-        Name = "Piece X Tycoon - 9786070403",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Piece%20X%20Tycoon%20-%209786070403.lua"
+        ["Name"] = "Piece X Tycoon - 9786070403",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Piece%20X%20Tycoon%20-%209786070403.lua"
     },
     ["1442319803"] = {
-        Name = "Soul Eater Resonance - 4505214429",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Soul%20Eater%20Resonance%20-%204505214429.lua"
+        ["Name"] = "Soul Eater Resonance - 4505214429",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Soul%20Eater%20Resonance%20-%204505214429.lua"
     },
     ["3412390892"] = {
-        Name = "Anime Impact Simulator - 9072679513",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Anime%20Impact%20Simulator%20-%209072679513.lua"
+        ["Name"] = "Anime Impact Simulator - 9072679513",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Anime%20Impact%20Simulator%20-%209072679513.lua"
     },
     ["3114966314"] = {
-        Name = "Multiverse Fighters Simulator - 8090572921",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Multiverse%20Fighters%20Simulator%20-%208090572921.lua"
+        ["Name"] = "Multiverse Fighters Simulator - 8090572921",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Multiverse%20Fighters%20Simulator%20-%208090572921.lua"
     },
     ["3475191052"] = {
-        Name = "Goal Kick Simulator - 9281034297",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Goal%20Kick%20Simulator%20-%209281034297.lua"
+        ["Name"] = "Goal Kick Simulator - 9281034297",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Goal%20Kick%20Simulator%20-%209281034297.lua"
     },
     ["1465584587"] = {
-        Name = "Mega Noob Simulator - 4543144283",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Mega%20Noob%20Simulator%20-%204543144283.lua"
+        ["Name"] = "Mega Noob Simulator - 4543144283",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Mega%20Noob%20Simulator%20-%204543144283.lua"
     },
     ["668582985"] = {
-        Name = "Egg Farm Simulator - 1828509885",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Egg%20Farm%20Simulator%20-%201828509885.lua"
+        ["Name"] = "Egg Farm Simulator - 1828509885",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Egg%20Farm%20Simulator%20-%201828509885.lua"
     },
     ["3422612987"] = {
-        Name = "Warriors Army Simulator - 9107946567",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Warriors%20Army%20Simulator%20-%209107946567.lua"
+        ["Name"] = "Warriors Army Simulator - 9107946567",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Warriors%20Army%20Simulator%20-%209107946567.lua"
     },
     ["1998877948"] = {
-        Name = "Undead Defense Tycoon - 5670292785",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Undead%20Defense%20Tycoon%20-%205670292785.lua"
+        ["Name"] = "Undead Defense Tycoon - 5670292785",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Undead%20Defense%20Tycoon%20-%205670292785.lua"
     },
     ["2633106921"] = {
-        Name = "Timber - 6897226634",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Timber%20-%206897226634.lua"
+        ["Name"] = "Timber - 6897226634",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Timber%20-%206897226634.lua"
     },
     ["117307972"] = {
-        Name = "Loomian Legacy - 306964494",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Loomian%20Legacy%20-%20306964494.lua"
+        ["Name"] = "Loomian Legacy - 306964494",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Loomian%20Legacy%20-%20306964494.lua"
     },
     ["1836146838"] = {
-        Name = "Bloxy Bingo - 5244411056",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Bloxy%20Bingo%20-%205244411056.lua"
+        ["Name"] = "Bloxy Bingo - 5244411056",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Bloxy%20Bingo%20-%205244411056.lua"
     },
     ["97314177"] = {
-        Name = "Ninja Tycoon - 221718525",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Ninja%20Tycoon%20-%20221718525.lua"
+        ["Name"] = "Ninja Tycoon - 221718525",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Ninja%20Tycoon%20-%20221718525.lua"
     },
     ["2423962400"] = {
-        Name = "Gym Tycoon - 6484864709",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Gym%20Tycoon%20-%206484864709.lua"
+        ["Name"] = "Gym Tycoon - 6484864709",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Gym%20Tycoon%20-%206484864709.lua"
     },
     ["2426874309"] = {
-        Name = "Slayer Tycoon - 6490016198",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Slayer%20Tycoon%20-%206490016198.lua"
+        ["Name"] = "Slayer Tycoon - 6490016198",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Slayer%20Tycoon%20-%206490016198.lua"
     },
     ["1871908106"] = {
-        Name = "Outlaster - 5343994291",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Outlaster%20-%205343994291.lua"
+        ["Name"] = "Outlaster - 5343994291",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Outlaster%20-%205343994291.lua"
     },
     ["3281670400"] = {
-        Name = "Critical Legends - 6843905606",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Critical%20Legends%20-%206843905606.lua"
+        ["Name"] = "Critical Legends - 6843905606",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Critical%20Legends%20-%206843905606.lua"
     },
     ["2922018548"] = {
-        Name = "Devious Lick Simulator - 7508789810",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Devious%20Lick%20Simulator%20-%207508789810.lua"
+        ["Name"] = "Devious Lick Simulator - 7508789810",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Devious%20Lick%20Simulator%20-%207508789810.lua"
     },
     ["3109792003"] = {
-        Name = "My Dragon Simulator - 8073375994",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/My%20Dragon%20Simulator%20-%208073375994.lua"
+        ["Name"] = "My Dragon Simulator - 8073375994",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/My%20Dragon%20Simulator%20-%208073375994.lua"
     },
     ["2788648141"] = {
-        Name = "Military Tycoon - 7180042682",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Military%20Tycoon%20-%207180042682.lua"
+        ["Name"] = "Military Tycoon - 7180042682",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Military%20Tycoon%20-%207180042682.lua"
     },
     ["1374118848"] = {
-        Name = "Dragon Ball Online Generations - 4195834406",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Dragon%20Ball%20Online%20Generations%20-%204195834406.lua"
+        ["Name"] = "Dragon Ball Online Generations - 4195834406",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Dragon%20Ball%20Online%20Generations%20-%204195834406.lua"
     },
     ["2209794754"] = {
-        Name = "Project Hero - 6085581583",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Project%20Hero%20-%206085581583.lua"
+        ["Name"] = "Project Hero - 6085581583",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Project%20Hero%20-%206085581583.lua"
     },
     ["2776411624"] = {
-        Name = "Anime Clone Tycoon - 7157161175",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Anime%20Clone%20Tycoon%20-%207157161175.lua"
+        ["Name"] = "Anime Clone Tycoon - 7157161175",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Anime%20Clone%20Tycoon%20-%207157161175.lua"
     },
     ["1280276210"] = {
-        Name = "Super Mansion Tycoon 1 - 3673909856",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Super%20Mansion%20Tycoon%201%2C%202%2C%20%26%203.lua"
+        ["Name"] = "Super Mansion Tycoon 1 - 3673909856",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Super%20Mansion%20Tycoon%201%2C%202%2C%20%26%203.lua"
     },
     ["1510089378"] = {
-        Name = "Super Mansion Tycoon 2 - 4613604501",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Super%20Mansion%20Tycoon%201%2C%202%2C%20%26%203.lua"
+        ["Name"] = "Super Mansion Tycoon 2 - 4613604501",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Super%20Mansion%20Tycoon%201%2C%202%2C%20%26%203.lua"
     },
     ["2208069834"] = {
-        Name = "Super Mansion Tycoon 3 - 6082207596",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Super%20Mansion%20Tycoon%201%2C%202%2C%20%26%203.lua"
+        ["Name"] = "Super Mansion Tycoon 3 - 6082207596",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Super%20Mansion%20Tycoon%201%2C%202%2C%20%26%203.lua"
     },
     ["2662774960"] = {
-        Name = "UFO Simulator - 6951762614",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/UFO%20Simulator%20-%206951762614.lua"
+        ["Name"] = "UFO Simulator - 6951762614",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/UFO%20Simulator%20-%206951762614.lua"
     },
     ["2747829371"] = {
-        Name = "YEET Legends - 7105775253",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/YEET%20Legends%20-%207105775253.lua"
+        ["Name"] = "YEET Legends - 7105775253",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/YEET%20Legends%20-%207105775253.lua"
     },
     ["2727447177"] = {
-        Name = "Pet Story - 7071444234",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Pet%20Story%20-%207071444234.lua"
+        ["Name"] = "Pet Story - 7071444234",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Pet%20Story%20-%207071444234.lua"
     },
     ["2902009413"] = {
-        Name = "Pet Fighters Simulator - 7449695387",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Pet%20Fighters%20Simulator%20-%207449695387.lua"
+        ["Name"] = "Pet Fighters Simulator - 7449695387",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Pet%20Fighters%20Simulator%20-%207449695387.lua"
     },
     ["2234531384"] = {
-        Name = "UFO Tycoon - 6129557066",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/UFO%20Tycoon%20-%206129557066.lua"
+        ["Name"] = "UFO Tycoon - 6129557066",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/UFO%20Tycoon%20-%206129557066.lua"
     },
     ["985731078"] = {
-        Name = "World Zero - 2727067538",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/World%20Zero%20-%202727067538.lua"
+        ["Name"] = "World Zero - 2727067538",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/World%20Zero%20-%202727067538.lua"
     },
     ["2736321696"] = {
-        Name = "Super Strong Simulator - 7085995187",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Super%20Strong%20Simulator%20-%207085995187.lua"
+        ["Name"] = "Super Strong Simulator - 7085995187",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Super%20Strong%20Simulator%20-%207085995187.lua"
     },
     ["1934249057"] = {
-        Name = "Tropical Resort Tycoon - 5534174456",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Tropical%20Resort%20Tycoon%20-%205534174456.lua"
+        ["Name"] = "Tropical Resort Tycoon - 5534174456",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Tropical%20Resort%20Tycoon%20-%205534174456.lua"
     },
     ["2232507648"] = {
-        Name = "Untitled Attack On Titan - 6125809531",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Untitled%20Attack%20On%20Titan%20-%206125809531.lua"
+        ["Name"] = "Untitled Attack On Titan - 6125809531",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Untitled%20Attack%20On%20Titan%20-%206125809531.lua"
     },
     ["2715844182"] = {
-        Name = "Hospital Tycoon - 7050008107",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Hospital%20Tycoon%20-%207050008107.lua"
+        ["Name"] = "Hospital Tycoon - 7050008107",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/MrJack-Game-List/main/Hospital%20Tycoon%20-%207050008107.lua"
     },
     ["1359362132"] = {
-        Name = "House Tycoon - 4109933355",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/hey/main/GamesList/House%20Tycoon%20-%204109933355"
+        ["Name"] = "House Tycoon - 4109933355",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/hey/main/GamesList/House%20Tycoon%20-%204109933355"
     },
     ["2395874968"] = {
-        Name = "Big City Tycoon - 6432407703",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/hey/main/GamesList/Big%20City%20Tycoon%20-%206432407703"
+        ["Name"] = "Big City Tycoon - 6432407703",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/hey/main/GamesList/Big%20City%20Tycoon%20-%206432407703"
     },
     ["2697547415"] = {
-        Name = "Action Tower Defense - 7015809878",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/hey/main/GamesList/Action%20Tower%20Defense%20-%207015809878"
+        ["Name"] = "Action Tower Defense - 7015809878",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/hey/main/GamesList/Action%20Tower%20Defense%20-%207015809878"
     },
     ["2410077994"] = {
-        Name = "Dragon Ball Final Hope",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/hey/main/Games/Dragon%20Ball%20Final%20Hope"
+        ["Name"] = "Dragon Ball Final Hope",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/hey/main/Games/Dragon%20Ball%20Final%20Hope"
     },
     ["2832356420"] = {
-        Name = "Anime Storm Simulator",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/hey/main/Games/Anime%20Storm%20Simulator"
+        ["Name"] = "Anime Storm Simulator",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/hey/main/Games/Anime%20Storm%20Simulator"
     },
     ["2512238361"] = {
-        Name = "Ninja Simulator",
-        Link = "https://raw.githubusercontent.com/thedragonslayer2/hey/main/Games/%E2%80%A6"
+        ["Name"] = "Ninja Simulator",
+        ["Link"] = "https://raw.githubusercontent.com/thedragonslayer2/hey/main/Games/%E2%80%A6"
     }
 }
+
+if main[tostring(game.GameId)] then
+    local gm = main[tostring(game.GameId)]
+    return gm["Link"]
+end;
