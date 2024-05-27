@@ -8,7 +8,16 @@ local detectionVectors = {
 
 local mt = getrawmetatable(game)
 local backupnamecall = mt.__namecall
+local OldNamecall;
 setreadonly(mt, false)
+
+OldNamecall = hookmetamethod(game, "__namecall", newcclosure(function(...)
+    if (not checkcaller() or true) and string.lower(getnamecallmethod()) == "kick" then
+        print("Cancelled Kick")
+        return nil
+    end
+    return OldNamecall(...)
+end))
 
 mt.__namecall = newcclosure(function(...)
     local method = getnamecallmethod()
@@ -39,5 +48,3 @@ mt.__namecall = newcclosure(function(...)
 end)
 
 setreadonly(mt, true)
-
-print("Anti Loaded")
