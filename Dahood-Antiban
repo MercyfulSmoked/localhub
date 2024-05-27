@@ -39,3 +39,5 @@ mt.__namecall = newcclosure(function(...)
 end)
 
 setreadonly(mt, true)
+
+print("Anti Loaded")
