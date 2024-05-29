@@ -1,3 +1,4 @@
+-- Made by Local
 local gui = Instance.new("ScreenGui")
 gui.Name = "ProfitTracker"
 gui.Parent = game.CoreGui
@@ -67,7 +68,7 @@ timeShadow.TextColor3 = Color3.fromRGB(0, 0, 0)
 timeShadow.TextTransparency = 0.8
 timeShadow.BackgroundTransparency = 1
 timeShadow.Text = "Elapsed Time: 00:00:00"
-timeShadow.Position = UDim2.new(0, 2, 0, 2)
+timeShadow.Position = UDim2.new(0, 2, 0, 2) 
 timeShadow.Parent = timeLabel
 
 local player = game.Players.LocalPlayer
@@ -79,9 +80,6 @@ if moneyGui and moneyGui:FindFirstChild("MoneyText") then
     local moneyTextParts = moneyGui.MoneyText.Text:split("$")
     initialMoney = moneyTextParts[2]:gsub(",", "")
     initialMoney = tonumber(initialMoney)
-else
-    warn("Money GUI not found.")
-    return
 end
 
 local function formatNumber(amount)
@@ -96,4 +94,21 @@ end
 local function formatTime(seconds)
     local hrs = math.floor(seconds / 3600)
     local mins = math.floor((seconds % 3600) / 60)
-    local secs
+    local secs = seconds % 60
+    return string.format("%02d:%02d:%02d", hrs, mins, secs)
+end
+
+local startTime = tick()
+
+while true do
+    wait(0.1)
+    local elapsedTime = tick() - startTime
+    local moneyTextParts = moneyGui.MoneyText.Text:split("$")
+    currentMoney = moneyTextParts[2]:gsub(",", "")
+    currentMoney = tonumber(currentMoney)
+    local profit = currentMoney - initialMoney
+    profitLabel.Text = "Profit: $" .. formatNumber(profit)
+    profitShadow.Text = profitLabel.Text
+    timeLabel.Text = "Elapsed Time: " .. formatTime(math.floor(elapsedTime))
+    timeShadow.Text = timeLabel.Text
+end
